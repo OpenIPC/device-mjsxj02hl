@@ -25,6 +25,14 @@ SSH: `ssh root@<camera_ip_address>` - There is no password by default. After cha
 
 You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
 
+### Bug reports
+
+OpenIPC (firmware, packages, hardware): https://github.com/OpenIPC/firmware/issues
+
+Majestic (streamer - sound, video, etc.): https://github.com/OpenIPC/microbe-web/issues
+
+Microbe (web interface): https://github.com/OpenIPC/microbe-web/issues
+
 ### Links
 * [MJSXJ02HL application](https://github.com/kasitoru/mjsxj02hl_application)
 * [Build tools for mjsxj02hl firmware](https://github.com/kasitoru/mjsxj02hl_firmware)
