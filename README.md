@@ -8,6 +8,14 @@ OpenIPC for Xiaomi MJSXJ02HL
 3. Download the [HiTool](http://www.hihope.org/en/download/download.aspx?mtt=36) program. After its launch, select the `Hi3518EV300` chip. Having opened the HiBurn tool, select the [partition table file](https://raw.githubusercontent.com/OpenIPC/device-mjsxj02hl/master/usb-burn.xml) and specify the path to the [fastboot](https://github.com/OpenIPC/firmware/releases/download/latest/u-boot-hi3518ev300-universal.bin), [kernel and rootfs](https://github.com/OpenIPC/firmware/releases/download/latest/openipc.hi3518ev300-lite-nor.tgz) files.
 4. Press `Burn` button, agree that some sections will be erased and connect the camera to USB with the Reset button pressed. If everything was done correctly, then the flashing process will begin. This usually takes about a minute and ends with an informational success message.
 
+### Configuration
+
+1. Create two `VFAT` partitions on your SD card (disable the quick format option).
+2. [Download](https://github.com/OpenIPC/device-mjsxj02hl/archive/refs/heads/master.zip) this repository and extract the contents of directory `flash` to the root of the first partition of your SD card.
+3. Using [Notepad++](https://notepad-plus-plus.org), open file `autoconfig/etc/network/interfaces` and change the [SSID and password](https://github.com/OpenIPC/device-mjsxj02hl/blob/master/flash/autoconfig/etc/network/interfaces#L18) of the Wi-Fi access point to your own (by default, these are `myssid` and `mypassword`).
+4. Turn off the camera's power, insert the SD card and turn it on again. Wait a while until the indicator starts flashing yellow. Reboot the camera by power supply (the SD card is still inside).
+5. If you did everything correctly, after a while you will hear a shutter click and the camera will connect to your Wi-Fi network.
+
 ### Links
 * [MJSXJ02HL application](https://github.com/kasitoru/mjsxj02hl_application)
 * [Build tools for mjsxj02hl firmware](https://github.com/kasitoru/mjsxj02hl_firmware)
