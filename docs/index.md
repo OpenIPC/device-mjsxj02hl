@@ -17,6 +17,12 @@ OpenIPC for Xiaomi MJSXJ02HL
 
 ### Using
 
+Web Interface is available on port 85 as http://camera-ip:85. Default login and password are admin and 12345, respectively.
+
+Majestic Endpoints: https://openipc.org/majestic-endpoints
+
+SSH: `ssh root@<camera_ip_address>` - There is no password by default. After changing the password in the web, it also changes for the console.
+
 You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
 
 ### Links
