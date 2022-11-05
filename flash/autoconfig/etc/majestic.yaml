@@ -4,8 +4,8 @@ system:
 isp:
   iqProfile: /etc/sensors/iq/f23.ini
 image:
-  mirror: false
-  flip: false
+  mirror: true
+  flip: true
   rotate: none
   contrast: 50
   hue: 50
@@ -19,7 +19,7 @@ nightMode:
   irCutPin1: 70
   irCutPin2: 68
   backlightPin: 54
-  dncDelay: 30
+  dncDelay: 10
 records:
   enabled: false
   path: /mnt/mmcblk0p1/%Y/%m/%d/%H/%M.mp4
