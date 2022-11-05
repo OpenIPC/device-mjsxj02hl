@@ -30,9 +30,9 @@ You can find more information about using OpenIPC in our [Wiki](https://wiki.ope
 
 ### Bug reports
 
-*OpenIPC (firmware, packages, hardware): [https://github.com/OpenIPC/firmware/issues](https://github.com/OpenIPC/firmware/issues)
-*Majestic (streamer - sound, video, etc.): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/microbe-web/issues)
-*Microbe (web interface): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/microbe-web/issues)
+* OpenIPC (firmware, packages, hardware): [https://github.com/OpenIPC/firmware/issues](https://github.com/OpenIPC/firmware/issues)
+* Majestic (streamer - sound, video, etc.): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/microbe-web/issues)
+* Microbe (web interface): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/microbe-web/issues)
 
 
 ### References to the previous project
