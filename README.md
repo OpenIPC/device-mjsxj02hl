@@ -16,6 +16,10 @@ OpenIPC for Xiaomi MJSXJ02HL
 4. Turn off the camera's power, insert the SD card and turn it on again. Wait a while until the indicator starts flashing yellow. Reboot the camera by power supply (the SD card is still inside).
 5. If you did everything correctly, after a while you will hear a shutter click and the camera will connect to your Wi-Fi network.
 
+### Using
+
+You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
+
 ### Links
 * [MJSXJ02HL application](https://github.com/kasitoru/mjsxj02hl_application)
 * [Build tools for mjsxj02hl firmware](https://github.com/kasitoru/mjsxj02hl_firmware)
