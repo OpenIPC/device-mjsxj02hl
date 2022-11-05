@@ -1,6 +1,13 @@
 ## Welcome
 OpenIPC for Xiaomi MJSXJ02HL
 
+### Installation
+
+1. Download the latest version of the [Zadig](https://zadig.akeo.ie) program. Run it and turn on the full list of devices (`Settings -> List of all devices`).
+2. Connect the camera to the USB port of the computer (the wire that comes with the kit will not work - there are no data contacts in it) with the Reset button pressed, select the `HiUSBBurn` device from the list as quickly as possible and install the `libusbK` driver for it. Most likely you will not succeed the first time (the device disappears after a few seconds, you need to do everything very quickly).
+3. Download the [HiTool](http://www.hihope.org/en/download/download.aspx?mtt=36) program. After its launch, select the `Hi3518EV300` chip. Having opened the HiBurn tool, select the [partition table file](https://raw.githubusercontent.com/OpenIPC/device-mjsxj02hl/master/usb-burn.xml) and specify the path to the [fastboot](https://github.com/OpenIPC/firmware/releases/download/latest/u-boot-hi3518ev300-universal.bin), [kernel and rootfs](https://github.com/OpenIPC/firmware/releases/download/latest/openipc.hi3518ev300-lite-nor.tgz) files.
+4. Press `Burn` button, agree that some sections will be erased and connect the camera to USB with the Reset button pressed. If everything was done correctly, then the flashing process will begin. This usually takes about a minute and ends with an informational success message.
+
 ### Links
 * [MJSXJ02HL application](https://github.com/kasitoru/mjsxj02hl_application)
 * [Build tools for mjsxj02hl firmware](https://github.com/kasitoru/mjsxj02hl_firmware)
