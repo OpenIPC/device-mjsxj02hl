@@ -20,13 +20,12 @@
 
 ### Using
 
-Web Interface is available on port 85 as http://camera-ip:85. Default login and password are `admin` and `12345`, respectively.
-
-Majestic Endpoints: https://openipc.org/majestic-endpoints
-
-SSH: `ssh root@<camera_ip_address>` - There is no password by default. After changing the password in the web, it also changes for the console.
-
-You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
+* Web Interface is available on port 85 as http://camera-ip:85. 
+    * Default login and password are `admin` and `12345`, respectively.
+* SSH access available as `ssh root@<camera_ip_address>`, there is no password by default. 
+    * After changing the password in the web, it also changes for the console.
+* Majestic Endpoints here - https://openipc.org/majestic-endpoints
+* You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
 
 
 ### Bug reports
