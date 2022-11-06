@@ -15,6 +15,7 @@
 2. [Download](https://github.com/OpenIPC/device-mjsxj02hl/archive/refs/heads/master.zip) this repository and extract the contents of directory `flash` to the root of the first partition of your SD card.
 3. Using [Notepad++](https://notepad-plus-plus.org), open file `autoconfig/etc/network/interfaces` and change the [SSID and password](https://github.com/OpenIPC/device-mjsxj02hl/blob/master/flash/autoconfig/etc/network/interfaces#L18) of the Wi-Fi access point to your own (by default, these are `myssid` and `mypassword`).
 4. Turn off the camera's power, insert the SD card and turn it on again. If you did everything correctly, after a while (1-2 minutes) you will hear a shutter click and the camera will connect to your Wi-Fi network.
+5. Remove the SD card from the device.
 
 
 ### Using
