@@ -25,6 +25,8 @@
 * SSH access available as `ssh root@<camera_ip_address>`, there is no password by default. 
     * After changing the password in the web, it also changes for the console.
 * Majestic Endpoints here - https://openipc.org/majestic-endpoints
+* Disable built-in LEDs `chmod -x /etc/init.d/S00autoled` and `chmod +x /etc/init.d/S00autoled` for enable it.
+* Disable automatic night mode `chmod -x /etc/init.d/S96autonight` and `chmod +x /etc/init.d/S96autonight` for enable it.
 * You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
 
 
