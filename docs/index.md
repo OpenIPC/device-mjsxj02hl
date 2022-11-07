@@ -21,7 +21,7 @@
 ### Using
 
 * Status of the built-in LEDs:
-    * *Orange* - The system is not loaded or majestic is not running.
+    * *Orange* - The system is not loaded or Majestic is not running.
     * *Blue* - The system is loaded and Majestic is running.
     * *White* - The partition with user data is being formatted.
 * Web Interface is available on port 85 as http://camera-ip:85. 
