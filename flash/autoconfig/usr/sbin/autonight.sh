@@ -29,13 +29,13 @@ show_help() {
 night_on() {
     curl -u $login:$pass http://localhost/night/on && \
     night_state=1 && \
-    echo LIGHT IS ON
+    echo NIGHT MODE ENABLED
 }
 
 night_off() {
-    curl curl -u $login:$pass http://localhost/night/off && \
+    curl -u $login:$pass http://localhost/night/off && \
     night_state=0 && \
-    echo LIGHT IS OFF
+    echo NIGHT MODE DISABLED
 }
 
 main() {
