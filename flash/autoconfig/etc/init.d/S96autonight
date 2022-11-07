@@ -6,7 +6,7 @@ AUTONIGHT_PID_FILE=/var/run/autonight.pid
 start() {
   printf "Starting automatic night mode changer: "
   umask 077
-  start-stop-daemon -S -q -p $AUTONIGHT_PID_FILE \
+  start-stop-daemon -b -m -S -q -p $AUTONIGHT_PID_FILE \
     --exec /usr/sbin/autonight.sh -- $AUTONIGHT_ARGS
   [ $? = 0 ] && echo "OK" || echo "FAIL"
 }
