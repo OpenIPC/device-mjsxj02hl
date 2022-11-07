@@ -46,7 +46,7 @@ main() {
     echo "...................."
 
     sleep 10
-    led_off
+    night_off
 
     while true; do
 
