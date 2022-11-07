@@ -20,6 +20,10 @@
 
 ### Using
 
+* Status of the built-in LEDs:
+    * *Orange* - The system is not loaded or majestic is not running.
+    * *Blue* - The system is loaded and Majestic is running.
+    * *White* - The partition with user data is being formatted.
 * Web Interface is available on port 85 as http://camera-ip:85. 
     * Default login and password are `admin` and `12345`, respectively.
 * SSH access available as `ssh root@<camera_ip_address>`, there is no password by default. 
