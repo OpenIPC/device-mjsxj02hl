@@ -41,8 +41,8 @@ pass=$(cat /etc/httpd.conf | grep cgi-bin | cut -d':' -f3)
 
 while true; do
     metrics=$(curl -s http://localhost/metrics)
-    isp_again=$(echo "${metrics}" | awk '/^isp_again/ {print $2}')
-    night_enabled=$(echo "${metrics}" | awk '/^night_enabled/ {print $2}')
+    isp_again=$(echo "${metrics}" | awk '/^isp_again/ {print $2}' | grep . || echo 0)
+    night_enabled=$(echo "${metrics}" | awk '/^night_enabled/ {print $2}' | grep . || echo 0)
 
     if [ $night_enabled -ne 1 ] && [ $isp_again -gt $again_high_target ]; then
         curl -s -u $login:$pass http://localhost/night/on
