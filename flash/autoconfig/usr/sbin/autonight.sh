@@ -8,14 +8,9 @@
 #   irCutPin2: 68
 #   backlightPin: 54
 
-login=$(cat /etc/httpd.conf | grep cgi-bin | cut -d':' -f2)
-pass=$(cat /etc/httpd.conf | grep cgi-bin | cut -d':' -f3)
 again_high_target=14000
 again_low_target=2000
-pollingInterval=4
-night_state=0
-again_night_on=0
-again_night_off=0
+pollingInterval=5
 
 show_help() {
     echo "Usage: $0 [-H value] [-L value] [-i value] [-h]
@@ -26,57 +21,6 @@ show_help() {
     exit 0
 }
 
-night_on() {
-    curl -u $login:$pass http://localhost/night/on && \
-    night_state=1 && \
-    echo NIGHT MODE ENABLED
-}
-
-night_off() {
-    curl -u $login:$pass http://localhost/night/off && \
-    night_state=0 && \
-    echo NIGHT MODE DISABLED
-}
-
-main() {
-    echo "...................."
-    echo "Watching at isp_again > ${again_high_target} to enable night mode"
-    echo "Watching at isp_again < ${again_low_target} to disable night mode"
-    echo "Polling interval: ${pollingInterval} sec"
-    echo "...................."
-
-    sleep 10
-    night_off
-
-    while true; do
-
-        [ $night_state == 1 ] && \
-        again_night_on=$(curl -s http://localhost/metrics | awk '/^isp_again/ {print $2}') && \
-        again_night_off=0 || \
-        again_night_off=$(curl -s http://localhost/metrics | awk '/^isp_again/ {print $2}')
-
-        echo "again_night_off: "$again_night_off
-        echo "again_night_on: "$again_night_on
-
-        if [ $again_night_off -gt $again_high_target ] || [ $again_night_on -gt $again_low_target ];then
-
-            [ $night_state == 0 ] && \
-            night_on || \
-            echo "Night mode is already enabled. Nothing changed. Continue"
-
-        else
-
-            [ $night_state == 1 ] && \
-            night_off || \
-            echo "Night mode is already disabled. Nothing changed. Continue"
-        fi
-
-        sleep ${pollingInterval}
-        echo "...................."
-    done
-}
-
-# override config values with command line arguments
 while getopts H:L:i:h flag; do
     case ${flag} in
         H) again_high_target=${OPTARG} ;;
@@ -86,4 +30,27 @@ while getopts H:L:i:h flag; do
     esac
 done
 
-main
+echo "...................."
+echo "Watching at isp_again > ${again_high_target} to enable night mode"
+echo "Watching at isp_again < ${again_low_target} to disable night mode"
+echo "Polling interval: ${pollingInterval} sec"
+echo "...................."
+
+login=$(cat /etc/httpd.conf | grep cgi-bin | cut -d':' -f2)
+pass=$(cat /etc/httpd.conf | grep cgi-bin | cut -d':' -f3)
+
+while true; do
+    metrics=$(curl -s http://localhost/metrics)
+    isp_again=$(echo "${metrics}" | awk '/^isp_again/ {print $2}')
+    night_enabled=$(echo "${metrics}" | awk '/^night_enabled/ {print $2}')
+
+    if [ $night_enabled -ne 1 ] && [ $isp_again -gt $again_high_target ]; then
+        curl -s -u $login:$pass http://localhost/night/on
+        echo "Condition isp_again > ${again_high_target} was met (current value is ${isp_again}), turn on the night mode"
+    elif [ $night_enabled -ne 0 ] && [ $isp_again -lt $again_low_target ]; then
+        curl -s -u $login:$pass http://localhost/night/off
+        echo "Condition isp_again < ${again_low_target} was met (current value is ${isp_again}), turn off the night mode"
+    fi
+    
+    sleep $pollingInterval
+done
