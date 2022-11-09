@@ -21,6 +21,11 @@ while getopts d:h flag; do
     esac
 done
 
+echo "...................."
+echo "Duration of pressing the button: ${duration} sec"
+echo "Polling interval: ${msleep} msec"
+echo "...................."
+
 if [ ! -d /sys/class/gpio/gpio0/ ]; then
     echo 0 > /sys/class/gpio/export
     echo in > /sys/class/gpio/gpio0/direction
