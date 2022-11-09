@@ -38,11 +38,11 @@ while true; do
             echo "Reset button pressed"
         fi
         if [ $pressed -ge $((duration*1000)) ]; then
-            echo "Let's start erasing the rootfs_data (/dev/mtd4) partition"
             /etc/init.d/S96autonight stop
             /etc/init.d/S00autoled stop
             killall majestic
             /usr/sbin/led_control.sh -o 1 -b 1
+            echo "Let's start erasing the rootfs_data (/dev/mtd4) partition"
             flash_eraseall -j /dev/mtd4
             reboot
             exit 0
