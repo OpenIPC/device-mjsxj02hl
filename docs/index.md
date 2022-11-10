@@ -23,7 +23,7 @@
 * Status of the built-in LEDs:
     * *Orange* - The system is not loaded or Majestic is not running.
     * *Blue* - The system is loaded and Majestic is running.
-    * *White* - The partition with user data is being formatted.
+    * *White* - The sysupgrade utility is running (install updates or wipe overlay partition).
 * Web Interface is available on port 85 as http://camera-ip:85. 
     * Default login and password are `admin` and `12345`, respectively.
 * SSH access available as `ssh root@<camera_ip_address>`, there is no password by default. 
@@ -31,6 +31,7 @@
 * Majestic Endpoints here - https://openipc.org/majestic-endpoints
 * Disable built-in LEDs `chmod -x /etc/init.d/S00autoled` and `chmod +x /etc/init.d/S00autoled` for enable it.
 * Disable automatic night mode `chmod -x /etc/init.d/S96autonight` and `chmod +x /etc/init.d/S96autonight` for enable it.
+* To reset the settings, hold down the Reset button, turn on the camera and wait for the white LED to light up.
 * You can find more information about using OpenIPC in our [Wiki](https://wiki.openipc.org).
 
 
