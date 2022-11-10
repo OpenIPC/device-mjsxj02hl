@@ -3,7 +3,8 @@
 # First boot
 #
 
-# Set osmem (mmz memory = 64 - osmem)
+# Set environments (mmz memory = 64 - osmem)
+fw_setenv bootargs 'mem=${osmem} console=ttyAMA0,115200 panic=20 rootfstype=squashfs root=/dev/mtdblock3 init=/init mtdparts=${mtdparts} mmz_allocator=hisi'
 fw_setenv osmem 35M
 
 # Enable white LED
