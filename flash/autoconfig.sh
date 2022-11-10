@@ -11,4 +11,4 @@ fw_setenv osmem 35M
 $(dirname $0)/autoconfig/usr/sbin/led_control.sh -o 1 -b 1
 
 # Wipe overlay partition and reboot
-/usr/sbin/sysupgrade -n
+/usr/sbin/sysupgrade -n -z
