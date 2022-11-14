@@ -38,7 +38,7 @@
 ### Bug reports
 
 * OpenIPC (firmware, packages, hardware): [https://github.com/OpenIPC/firmware/issues](https://github.com/OpenIPC/firmware/issues)
-* Majestic (streamer - sound, video, etc.): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/majestic/issues)
+* Majestic (streamer - sound, video, etc.): [https://github.com/OpenIPC/majestic/issues](https://github.com/OpenIPC/majestic/issues)
 * Microbe (web interface): [https://github.com/OpenIPC/microbe-web/issues](https://github.com/OpenIPC/microbe-web/issues)
 
 
