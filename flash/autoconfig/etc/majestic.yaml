@@ -58,14 +58,14 @@ motionDetect:
 ipeye:
   enabled: false
 netip:
-  enabled: true
+  enabled: false
   user: admin
-  password: 6V0Y4HLF
+  password: 12345
   port: 34567
   snapshots: true
   ignoreSetTime: false
 onvif:
-  enabled: true
+  enabled: false
 watchdog:
   enabled: true
   timeout: 30
