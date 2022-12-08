@@ -37,12 +37,13 @@ mjpeg:
   bitrate: 2048
 audio:
   enabled: true
-  volume: 50
+  volume: 70
   srate: 8000
-  codec: alaw
+  codec: pcm
   outputEnabled: true
   speakerPin: 55
   speakerPinInvert: false
+  voiceEqualizer: common
 rtsp:
   enabled: true
   port: 554
